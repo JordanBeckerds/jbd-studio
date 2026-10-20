@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>JBD — Studio Web Indépendant, Pau</title>
+<meta name="description" content="Jordan Becker Damour — studio web indépendant à Pau. Sites vitrine sur-mesure pour indépendants, artisans, commerces et associations.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>◈</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="grain"></canvas>
+
+<div class="cursor" id="cursor">
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+  <span class="cursor-label" id="cursorLabel"></span>
+</div>
+
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-mark">◈</div>
+    <div class="preloader-word" aria-hidden="true">
+      <span>J</span><span>B</span><span>D</span>
+    </div>
+    <div class="preloader-bar"><div class="preloader-bar-fill" id="preBarFill"></div></div>
+    <div class="preloader-count" id="preCount">0</div>
+  </div>
+</div>
+
+<div class="scroll-rail"><div class="scroll-rail-fill" id="scrollFill"></div></div>
+
+<header class="nav" id="siteNav">
+  <a href="#top" class="nav-mark"><img src="img/logo.svg" alt="JBD" class="nav-logo"><span>.dev</span></a>
+  <nav class="nav-links">
+    <a href="#work" data-cursor="Voir">Réalisations</a>
+    <a href="#services" data-cursor="Voir">Prestations</a>
+    <a href="#process" data-cursor="Voir">Méthode</a>
+    <a href="#contact" data-cursor="Voir">Contact</a>
+  </nav>
+  <button class="nav-menu-btn" id="menuBtn" aria-label="Menu">
+    <span></span><span></span>
+  </button>
+</header>
+
+<div class="menu-overlay" id="menuOverlay">
+  <div class="menu-overlay-bg"></div>
+  <nav>
+    <a href="#work" data-cursor="Go"><span class="menu-num">01</span>Réalisations</a>
+    <a href="#services" data-cursor="Go"><span class="menu-num">02</span>Prestations</a>
+    <a href="#process" data-cursor="Go"><span class="menu-num">03</span>Méthode</a>
+    <a href="#contact" data-cursor="Go"><span class="menu-num">04</span>Contact</a>
+  </nav>
+  <div class="menu-overlay-footer">
+    <a href="mailto:jdsbecker@gmail.com">jdsbecker@gmail.com</a>
+    <span>Pau, France</span>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <canvas id="webgl-hero"></canvas>
+    <div class="hero-vignette"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal-line"><span>Studio web indépendant · Pau, France</span></p>
+      <h1 class="hero-title">
+        <span class="line"><span class="reveal-line"><span>Votre activité</span></span></span>
+        <span class="line"><span class="reveal-line"><span>mérite <em>un vrai</em></span></span></span>
+        <span class="line"><span class="reveal-line"><span>site web.</span></span></span>
+      </h1>
+      <p class="hero-sub reveal-line"><span>Je conçois des sites sur-mesure pour indépendants, artisans, commerces et associations — pensés pour vos clients, pas pour un template.</span></p>
+      <div class="hero-cta reveal-line">
+        <span>
+          <a href="#contact" class="btn-magnetic" data-cursor="Devis"><span>Demander un devis gratuit</span></a>
+          <span class="hero-price"><b>dès 599€</b><i>site livré en 20 jours ouvrés</i></span>
+        </span>
+      </div>
+    </div>
+    <div class="hero-scroll-cue">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"><i></i></div>
+    </div>
+    <div class="hero-marquee">
+      <div class="hero-marquee-track">
+        <span>JBD.DEV&nbsp;&nbsp;◈&nbsp;&nbsp;PAU — FRANCE&nbsp;&nbsp;◈&nbsp;&nbsp;SITES SUR-MESURE&nbsp;&nbsp;◈&nbsp;&nbsp;RÉPONSE SOUS 24H&nbsp;&nbsp;◈&nbsp;&nbsp;</span>
+        <span>JBD.DEV&nbsp;&nbsp;◈&nbsp;&nbsp;PAU — FRANCE&nbsp;&nbsp;◈&nbsp;&nbsp;SITES SUR-MESURE&nbsp;&nbsp;◈&nbsp;&nbsp;RÉPONSE SOUS 24H&nbsp;&nbsp;◈&nbsp;&nbsp;</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATEMENT -->
+  <section class="statement">
+    <p class="statement-text">
+      <span class="sw">Pas</span> <span class="sw">un</span> <span class="sw">template</span>
+      <span class="sw">générique</span> <span class="sw dim">—</span>
+      <span class="sw dim">un</span> <span class="sw dim">site</span> <span class="sw dim">pensé</span>
+      <span class="sw dim">pour</span> <span class="sw dim">votre</span> <span class="sw dim">métier,</span>
+      <span class="sw dim">votre</span> <span class="sw dim">ville</span>
+      <span class="sw dim">et</span> <span class="sw accent">vos</span>
+      <span class="sw accent">clients.</span>
+    </p>
+    <div class="statement-stats">
+      <div class="stat"><b data-count="24">0</b><span>Jours ouvrés en moyenne</span></div>
+      <div class="stat"><b data-count="1">0</b><span>Interlocuteur, du devis à la mise en ligne</span></div>
+      <div class="stat"><b data-count="24">0</b><span>Heures pour une première réponse</span></div>
+    </div>
+  </section>
+
+  <!-- WORK / GALLERY -->
+  <section class="work" id="work">
+    <div class="section-head">
+      <p class="section-tag reveal-line"><span>Réalisations</span></p>
+      <h2 class="section-title reveal-line"><span>Des sites qui travaillent pour vous.</span></h2>
+    </div>
+
+    <div class="gallery-rail" id="galleryRail">
+      <div class="gallery-track" id="galleryTrack"></div>
+    </div>
+    <div class="gallery-progress"><div class="gallery-progress-fill" id="galleryProgressFill"></div></div>
+  </section>
+
+  <!-- INFO-CAFÉ — Jordan's own venture, co-founded with Valentin, given full
+       section weight like "Le studio" rather than a compact card. -->
+  <section class="infocafe" id="infocafe">
+    <div class="ic-media">
+      <canvas id="icCanvas"></canvas>
+      <span class="ic-media-tag">Projet en cours de lancement</span>
+    </div>
+    <div class="ic-copy">
+      <p class="section-tag reveal-line"><span>Mon autre projet</span></p>
+      <h2 class="ic-title reveal-line"><span>Info-Café</span></h2>
+      <p class="ic-lede reveal-line"><span>Un commerce de proximité pour l'inclusion numérique, à Pau.</span></p>
+
+      <p class="ic-body reveal-line"><span>Info-Café, c'est le commerce que j'ouvre avec Valentin Sowa : dépannage informatique, vente de matériel et accompagnement au numérique, en boutique à Pau.</span></p>
+      <p class="ic-body reveal-line"><span>C'est en service civique, à aider des seniors à prendre en main le numérique, que j'ai rencontré Valentin. Nous y avons constaté une vraie disparité et un besoin important — c'est cette rencontre qui a donné envie de monter ce projet ensemble.</span></p>
+
+      <div class="ic-services reveal-line">
+        <span>
+          <i>Maintenance</i><i>Réparation</i><i>Montage sur-mesure</i><i>Conseil</i><i>Cours en ligne</i><i>Cours en présentiel</i>
+        </span>
+      </div>
+
+      <div class="ic-founders">
+        <div>
+          <p>Le volet technique — dépannage, montage et développement.</p>
+          <b>Jordan Becker Damour</b>
+          <span>Cofondateur — développement &amp; infrastructure du site</span>
+        </div>
+        <div>
+          <p>Le volet formation et gestion — pédagogie et administratif.</p>
+          <b>Valentin Sowa</b>
+          <span>Cofondateur</span>
+        </div>
+      </div>
+
+      <a href="https://infocafe.shop" target="_blank" rel="noreferrer" class="btn-magnetic" data-cursor="Voir">
+        <span>Découvrir infocafe.shop</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- STUDIO / ABOUT -->
+  <section class="studio" id="studio">
+    <div class="studio-media">
+      <canvas id="webgl-studio"></canvas>
+    </div>
+    <div class="studio-copy">
+      <p class="section-tag reveal-line"><span>Le studio</span></p>
+      <h2 class="studio-title reveal-line"><span>Un développeur, pas une agence anonyme.</span></h2>
+      <p class="studio-body reveal-line"><span>JBD.dev, c'est moi — Jordan Becker Damour, développeur indépendant basé à Pau. Je conçois, code et livre chaque site personnellement, du premier échange à la mise en ligne.</span></p>
+      <p class="studio-body reveal-line"><span>Pas de commercial, pas de sous-traitance : un seul interlocuteur, une formation à la prise en main incluse, et un suivi réactif après livraison.</span></p>
+      <div class="studio-signatures">
+        <div>
+          <p>Rigoureux et curieux, j'aime aller au fond des choses — une ligne de code comme un projet monté de A à Z. Ce qui me motive : construire des outils qui tiennent la route, et les livrer moi-même, sans intermédiaire.</p>
+          <b>Jordan Becker Damour</b>
+          <span>Développeur &amp; fondateur — Pau, France</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE / PARCOURS -->
+  <section class="timeline" id="parcours">
+    <div class="timeline-bg" id="timelineBg"></div>
+    <div class="section-head">
+      <p class="section-tag reveal-line"><span>Parcours</span></p>
+      <h2 class="section-title reveal-line"><span>Comment on en est arrivé là.</span></h2>
+    </div>
+    <div class="timeline-rail" id="timelineRail">
+      <div class="timeline-line"><div class="timeline-line-fill" id="timelineLineFill"></div></div>
+      <div class="timeline-track" id="timelineTrack">
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <span class="timeline-when">2022 – 2024</span>
+          <h3>Lycée Roland Garros</h3>
+          <p>Bac général, spécialité NSI — à La Réunion. Les premières bases de l'informatique, posées tôt.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <span class="timeline-when">Oct. 2023 – Juin 2024</span>
+          <h3>Dashoverflow</h3>
+          <p>Ma première expérience professionnelle : développement back-end pour Dashoverflow, un projet de sites sur-mesure lancé avec un ami, à La Réunion.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <span class="timeline-when">2023 – 2025</span>
+          <h3>STUDI</h3>
+          <p>Deux ans de formation à distance en parallèle, PHP/Symfony — les fondations théoriques du métier.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <span class="timeline-when">2024 – 2025</span>
+          <h3>Service civique</h3>
+          <p>Volontaire chez Unis-Cité, accompagnement des seniors au numérique — c'est là qu'est née l'idée d'Info-Café.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <span class="timeline-when">2025 – 2026</span>
+          <h3>Le Petit Oasis</h3>
+          <p>Bénévolat — premier site associatif livré, écoute et solidarité au cœur de Pau.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <span class="timeline-when">Projet en cours</span>
+          <h3>Info-Café</h3>
+          <p>Cofondation d'un commerce dédié au dépannage et à l'inclusion numérique — site et stack Docker développés de A à Z.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <span class="timeline-when">Juin 2026</span>
+          <h3>Statut d'indépendant</h3>
+          <p>Le cap officiel : passer de la formation à une activité déclarée.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <span class="timeline-when">Montée en charge</span>
+          <h3>Ateliro</h3>
+          <p>Déploiement de la plateforme pour des indépendants locaux — Salon Patte Douce, Campagne Delphine.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <span class="timeline-when">Aujourd'hui</span>
+          <h3>JBD.dev</h3>
+          <p>Studio actif, nouveaux projets en cours — la suite s'écrit avec vous.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS / GITHUB -->
+  <section class="skills" id="skills">
+    <p class="section-tag reveal-line center"><span>Sous le capot</span></p>
+    <h2 class="section-title reveal-line center"><span>Ce que je sais construire.</span></h2>
+
+    <div class="stack-tags reveal-line center">
+      <span>
+        <i>HTML</i><i>CSS</i><i>JavaScript</i><i>PHP</i><i>Node.js</i><i>React</i><i>Next.js</i>
+        <i>Docker</i><i>Nginx</i><i>Git</i><i>DNS &amp; serveurs</i><i>API tierces</i>
+      </span>
+    </div>
+
+    <div class="skills-github" id="skillsGithub">
+      <div class="gh-loading">Chargement du profil GitHub…</div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <p class="section-tag reveal-line center"><span>Ce qui est inclus</span></p>
+    <h2 class="section-title reveal-line center"><span>Pensé pour votre activité.</span></h2>
+
+    <div class="service-list">
+      <div class="service-item" data-tilt>
+        <div class="service-num">01</div>
+        <h3>Site responsive</h3>
+        <p>Vos clients vous cherchent sur leur téléphone — votre site s'affiche parfaitement sur mobile, tablette et desktop.</p>
+      </div>
+      <div class="service-item" data-tilt>
+        <div class="service-num">02</div>
+        <h3>Référencement local</h3>
+        <p>SEO optimisé pour votre ville : balises méta, schema.org et intégration Google Maps.</p>
+      </div>
+      <div class="service-item" data-tilt>
+        <div class="service-num">03</div>
+        <h3>Fiche Google Business</h3>
+        <p>Création ou optimisation de votre fiche Google — horaires, photos, avis. Option incluse dans le délai de livraison.</p>
+      </div>
+      <div class="service-item" data-tilt>
+        <div class="service-num">04</div>
+        <h3>Formulaire &amp; prise de RDV</h3>
+        <p>Vos clients vous contactent ou réservent directement depuis le site — les demandes arrivent par email.</p>
+      </div>
+      <div class="service-item" data-tilt>
+        <div class="service-num">05</div>
+        <h3>Tableau de bord — Pro</h3>
+        <p>Interface de gestion autonome pour modifier textes, photos et tarifs vous-même, sans dépendre de moi.</p>
+      </div>
+      <div class="service-item" data-tilt>
+        <div class="service-num">06</div>
+        <h3>Accompagnement humain</h3>
+        <p>Un seul interlocuteur du devis à la mise en ligne, formation incluse et suivi réactif après livraison.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process" id="process">
+    <p class="section-tag reveal-line center"><span>Méthode</span></p>
+    <h2 class="section-title reveal-line center"><span>Du premier message au site en ligne.</span></h2>
+    <div class="process-list">
+      <div class="process-item">
+        <span class="process-num">01</span>
+        <h3>Appel découverte</h3>
+        <p>30 minutes pour comprendre votre activité, vos clients et ce dont votre site a vraiment besoin.</p>
+      </div>
+      <div class="process-item">
+        <span class="process-num">02</span>
+        <h3>Devis &amp; cadrage</h3>
+        <p>Un devis clair sous 24h — pages, fonctionnalités, budget et délai fixés avant de commencer.</p>
+      </div>
+      <div class="process-item">
+        <span class="process-num">03</span>
+        <h3>Conception &amp; développement</h3>
+        <p>Design et code sur-mesure, avec des points d'étape réguliers pour ajuster en cours de route.</p>
+      </div>
+      <div class="process-item">
+        <span class="process-num">04</span>
+        <h3>Livraison &amp; formation</h3>
+        <p>Mise en ligne, prise en main de votre tableau de bord, et suivi réactif après livraison.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTS MARQUEE -->
+  <section class="clients">
+    <div class="clients-track">
+      <span>INDÉPENDANTS</span><span>ARTISANS</span><span>COMMERCES LOCAUX</span><span>ASSOCIATIONS</span><span>PLATEFORMES SUR-MESURE</span>
+      <span>INDÉPENDANTS</span><span>ARTISANS</span><span>COMMERCES LOCAUX</span><span>ASSOCIATIONS</span><span>PLATEFORMES SUR-MESURE</span>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <canvas id="webgl-contact"></canvas>
+    <div class="contact-content">
+      <p class="section-tag reveal-line"><span>Votre projet</span></p>
+      <h2 class="contact-title reveal-line"><span>Donnons de la visibilité à votre activité.</span></h2>
+      <a href="mailto:jdsbecker@gmail.com" class="contact-email btn-magnetic" data-cursor="Email">
+        <span>jdsbecker@gmail.com</span>
+      </a>
+      <div class="contact-meta">
+        <div><b>Basé à</b><span>Pau, France<br>Missions à distance partout en France</span></div>
+        <div><b>Délai</b><span>Réponse sous 24h<br>Site livré en ~20 jours ouvrés</span></div>
+        <div><b>Conditions</b><span>Appel découverte gratuit — 30 min<br>Devis gratuit, sans engagement</span></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <span>© 2026 Jordan Becker Damour — JBD.dev, studio web indépendant, Pau.</span>
+  <button class="to-top" id="toTop" data-cursor="Top">Haut de page ↑</button>
+</footer>
+
+<script async src="https://unpkg.com/es-module-shims@1.10.0/dist/es-module-shims.js"></script>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
